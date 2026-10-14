@@ -2873,7 +2873,10 @@ function resolveEnglishTitle(title) {
     return SERIES_TITLE_PT_TO_EN[normalized];
   }
 
-  for (const [ptTitle, enTitle] of Object.entries(SERIES_TITLE_PT_TO_EN)) {
+  const sortedPtTitles = Object.entries(SERIES_TITLE_PT_TO_EN)
+    .sort(([a], [b]) => b.length - a.length);
+
+  for (const [ptTitle, enTitle] of sortedPtTitles) {
     if (normalized.includes(ptTitle) || ptTitle.includes(normalized)) {
       return enTitle;
     }
