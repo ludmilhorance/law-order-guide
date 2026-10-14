@@ -181,6 +181,7 @@
       white-space: nowrap;
       font-weight: 500;
       font-size: 0.95rem;
+      flex-shrink: 0;
     }
 
     .sub-tab:hover { background: var(--surface-lighter); }
@@ -488,7 +489,7 @@
 
       .episode-actions { 
         grid-column: 1 / -1; 
-        justify-content: flex-end; }
+        justify-content: flex-end;
       }
 
      .episode-title { 
@@ -579,13 +580,14 @@
       align-items: center;
       border-left: 3px solid transparent;
       transition: var(--transition);
+      overflow: hidden;
     }
 
     .watch-order-item:hover { background: var(--surface-lighter); border-left-color: var(--accent); }
     .watch-order-item.watched { opacity: 0.7; }
     .watch-order-item.watched .watch-order-title { text-decoration: line-through; color: var(--text-muted); }
 
-    .watch-order poster {
+    .watch-order-poster {
       width: 80px;
       height: 120px;
       border-radius: 8px;
