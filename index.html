@@ -37,7 +37,7 @@
     }
 
     html, body {
-      overflow-x: hidden;
+      overflow-x: clip;
       max-width: 100%;
     }
 
@@ -106,12 +106,15 @@
 
     .tabs {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 8px;
       overflow-x: auto;
+      overflow-y: hidden;
       padding: 15px 0;
       margin-bottom: 25px;
       width: 100%;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
       scrollbar-width: thin;
       scrollbar-color: var(--accent) var(--surface);
     }
@@ -134,6 +137,7 @@
       white-space: nowrap;
       font-weight: 500;
       min-width: fit-content;
+      flex-shrink: 0;
     }
 
     .tab:hover { background: var(--surface-light); transform: translateY(-2px); }
