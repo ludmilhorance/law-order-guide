@@ -2797,62 +2797,221 @@
     ];
 
     // ============================================================
-    // CONFIGURAÇÃO TMDB
+    // CONFIGURAÇÃO DE PÔSTERES (SEM API TMDB)
     // ============================================================
-    const TMDB_API_KEY = 'c822e209d78843e3d5236575edd62e52'; 
     const TMDB_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 
-    const TMDB_SERIES_IDS = {
-      'Law & Order': 549,
-      'Law & Order: Special Victims Unit': 2734,
-      'Law & Order: Criminal Intent': 4601,
-      'Law & Order: Trial by Jury': 3357,
-      'Law & Order: Organized Crime': 106158,
-      'Law & Order: Los Angeles': 32632,
-      'Law & Order: True Crime': 72496,
-      'Law & Order: UK': 7098,
-      'Conviction': 2420,
-      'Law & Order Toronto: Criminal Intent': 228026
-    };
-
+    
+    // Mapeamento de títulos em português para inglês  
     const SERIES_TITLE_PT_TO_EN = {
   'lei e ordem': 'Law & Order',
   'lei & ordem': 'Law & Order',
   'law order': 'Law & Order',
+  'law & order': 'Law & Order',
+
   'lei e ordem unidade de vitimas especiais': 'Law & Order: Special Victims Unit',
   'lei & ordem unidade de vitimas especiais': 'Law & Order: Special Victims Unit',
+  'lei e ordem unidades de vitimas especiais': 'Law & Order: Special Victims Unit',
+  'lei & ordem unidades de vitimas especiais': 'Law & Order: Special Victims Unit',
+  'lei e ordem svu': 'Law & Order: Special Victims Unit',
+  'lei & ordem svu': 'Law & Order: Special Victims Unit',
   'law order svu': 'Law & Order: Special Victims Unit',
   'law & order svu': 'Law & Order: Special Victims Unit',
+  'lei e ordem uve': 'Law & Order: Special Victims Unit',
+  'lei & ordem uve': 'Law & Order: Special Victims Unit',
+  'law order uve': 'Law & Order: Special Victims Unit',
+  
   'lei e ordem crimes premeditados': 'Law & Order: Criminal Intent',
   'lei & ordem crimes premeditados': 'Law & Order: Criminal Intent',
   'law order ci': 'Law & Order: Criminal Intent',
   'law & order ci': 'Law & Order: Criminal Intent',
+  'lei e ordem criminal intent': 'Law & Order: Criminal Intent',
+  'lei & ordem criminal intent': 'Law & Order: Criminal Intent',
+  'law order criminal intent': 'Law & Order: Criminal Intent',
+  'law & order criminal intent': 'Law & Order: Criminal Intent',
+  'lei e ordem ci': 'Law & Order: Criminal Intent',
+  'lei & ordem ci': 'Law & Order: Criminal Intent',
+  
   'lei e ordem tribunal do juri': 'Law & Order: Trial by Jury',
   'lei & ordem tribunal do juri': 'Law & Order: Trial by Jury',
   'law order tbj': 'Law & Order: Trial by Jury',
   'law & order tbj': 'Law & Order: Trial by Jury',
+  'lei e ordem trial by jury': 'Law & Order: Trial by Jury',
+  'lei & ordem trial by jury': 'Law & Order: Trial by Jury',
+  'lei e ordem tbj': 'Law & Order: Trial by Jury', 
+  'lei & ordem tbj': 'Law & Order: Trial by Jury',
+  
   'lei e ordem crime organizado': 'Law & Order: Organized Crime',
   'lei & ordem crime organizado': 'Law & Order: Organized Crime',
   'law order oc': 'Law & Order: Organized Crime',
   'law & order oc': 'Law & Order: Organized Crime',
+  'lei e ordem organized crime': 'Law & Order: Organized Crime',
+  'lei & ordem organized crime': 'Law & Order: Organized Crime',
+  'law order organized crime': 'Law & Order: Organized Crime',
+  'law & order organized crime': 'Law & Order: Organized Crime',
+  'lei e ordem oc': 'Law & Order: Organized Crime',
+  'lei & ordem oc': 'Law & Order: Organized Crime',
+  
   'lei e ordem los angeles': 'Law & Order: Los Angeles',
   'lei & ordem los angeles': 'Law & Order: Los Angeles',
   'law order la': 'Law & Order: Los Angeles',
   'law & order la': 'Law & Order: Los Angeles',
+  'lei e ordem la': 'Law & Order: Los Angeles',
+  'lei & ordem la': 'Law & Order: Los Angeles',
+  'law order los angeles': 'Law & Order: Los Angeles',
+  'law & order los angeles': 'Law & Order: Los Angeles',
+ 
   'lei e ordem true crime': 'Law & Order: True Crime',
   'lei & ordem true crime': 'Law & Order: True Crime',
   'law e order crimes reais': 'Law & Order: True Crime',
   'law & order crimes reais': 'Law & Order: True Crime',
+  
   'lei e ordem uk': 'Law & Order: UK',
   'lei & ordem uk': 'Law & Order: UK',
+  'law order uk': 'Law & Order: UK',
+  'law & order uk': 'Law & Order: UK',
+  'lei e ordem reino unido': 'Law & Order: UK',
+  'lei & ordem reino unido': 'Law & Order: UK',
+  'law order reino unido': 'Law & Order: UK',
+  'law & order reino unido': 'Law & Order: UK',
+  
   'conviction': 'Conviction',
-  'conexao': 'Conviction',
+  'convicção': 'Conviction',
+  
   'lei e ordem toronto': 'Law & Order Toronto: Criminal Intent',
   'lei & ordem toronto': 'Law & Order Toronto: Criminal Intent',
-  'law order toronto': 'Law & Order Toronto: Criminal Intent'
+  'law order toronto': 'Law & Order Toronto: Criminal Intent',
+  'law & order toronto': 'Law & Order Toronto: Criminal Intent',
+  'lei e ordem crimes premeditados toronto': 'Law & Order Toronto: Criminal Intent',
+  'lei & ordem crimes premeditados toronto': 'Law & Order Toronto: Criminal Intent',
+  'law order crimes premeditados toronto': 'Law & Order Toronto: Criminal Intent',
+  'law & order crimes premeditados toronto': 'Law & Order Toronto: Criminal Intent',
+  'lei e ordem criminal intent toronto': 'Law & Order Toronto: Criminal Intent',
+  'lei & ordem criminal intent toronto': 'Law & Order Toronto: Criminal Intent',
+  'law order criminal intent toronto': 'Law & Order Toronto: Criminal Intent',  
+  'law & order criminal intent toronto': 'Law & Order Toronto: Criminal Intent',
 };
 
+// ============================================================
+// DICIONÁRIO DE PÔSTERES POR SÉRIE E TEMPORADA
+// ============================================================
+// Substitua cada "URL_..." pelo código da imagem copiado do TMDB.
+// Exemplo: se a URL copiada for
+// https://image.tmdb.org/t/p/original/5qqKvcVNQMBQ2J6FZCkPfyOukap.jpg
+// você coloca apenas: '/5qqKvcVNQMBQ2J6FZCkPfyOukap.jpg'
+
+const SEASON_POSTERS = {
+  'Law & Order': {
+    1: TMDB_BASE_URL + '/hGrkBU5p60zZj9bMByo9cegZfhl.jpg',
+    2: TMDB_BASE_URL + '/nykyEGoMsVPnyrnoUL0g93YJPQZ.jpg',
+    3: TMDB_BASE_URL + '/emKji2D1tLAJsFad84ENA4PufI5.jpg',
+    4: TMDB_BASE_URL + '/fiSP98l9G7zjC0sBWwQ02Nmhpub.jpg',
+    5: TMDB_BASE_URL + '/v8yqfobOp6jSDomgcOnotfsGM2i.jpg',
+    6: TMDB_BASE_URL + '/5GaJYO3BXCUaHKXr9e7wC1IARwo.jpg',
+    7: TMDB_BASE_URL + '/mEGBAiPkZcp4GgPv7CQmFhOEWrK.jpg',
+    8: TMDB_BASE_URL + '/35bYc6LYxA8L8pCm2Pxl3dCIqq5.jpg',
+    9: TMDB_BASE_URL + '/2mW0rzeZqqCYwpC84GEm4vDyckB.jpg',
+    10: TMDB_BASE_URL + '/A3VQXxgkwnUgDOEo1rG1QpvgV2c.jpg',
+    11: TMDB_BASE_URL + '/u5MyTy53EWtnsMQewECGfNDywme.jpg',
+    12: TMDB_BASE_URL + '/xAazzYBfFquWWqes5dozpQ0x4jW.jpg',
+    13: TMDB_BASE_URL + '/2DzgIJzKVY9OfYxRMJjJLIZRhfi.jpg',
+    14: TMDB_BASE_URL + '/26ByCQKroHuBs7ZgbkwHTsHvU77.jpg',
+    15: TMDB_BASE_URL + '/z07aBZ5euhdhl0hyzWhwU1mGsrN.jpg',
+    16: TMDB_BASE_URL + '/vo1hHZ1Bpt7XOYDqab7rqw5VTZL.jpg',
+    17: TMDB_BASE_URL + '/zjSZrjqz9f3n6XoPYpaIgzwDQT3.jpg',
+    18: TMDB_BASE_URL + '/q0nVi8xzk7DHpeFnQ678f8asYxC.jpg',
+    19: TMDB_BASE_URL + '/fIIoj3EzsHcgF9Yd0ISWKinmLX8.jpg',
+    20: TMDB_BASE_URL + '/yoISWagCsb16Hnoi16Ot1nur2FV.jpg',
+    21: TMDB_BASE_URL + '/dEDC93cV4n4oJuIEzTCBfPM8dCs.jpg',
+    22: TMDB_BASE_URL + '/1Opw4Qfiza2Uk5ENZgLWVmQyzoL.jpg',
+    23: TMDB_BASE_URL + '/m9zTQr4TYS98UFSiA1k0mMfECPe.jpg',
+    24: TMDB_BASE_URL + '/fQBmjEAg8hjiSc0Nob6tJOXnAql.jpg',
+    25: TMDB_BASE_URL + '/3NYN6Paxb2FzIfR9sQEyH1HG1Vw.jpg',
+    26: TMDB_BASE_URL + '/z7YUr8WK4C5umh63HFcVmKc7hUH.jpg'
+  },
+  'Law & Order: Special Victims Unit': {
+    1: TMDB_BASE_URL + '/henISkFVHhdmxNMOUi7WU0q3zAXP.jpg',
+    2: TMDB_BASE_URL + '/mLbRpNgfF3XgYmvrkjbJxkiUL1e.jpg',
+    3: TMDB_BASE_URL + '/6KwUWCLK1fbyVp6pruFLqBICBpR.jpg',
+    4: TMDB_BASE_URL + '/d63agxmTTn8k4E0cWnyR4fiA4o6.jpg',
+    5: TMDB_BASE_URL + '/n98kc1ErETwnnoZLHERm6AX0Yjl.jpg',
+    6: TMDB_BASE_URL + '/p3iU1fLz9h8O1d6g4KrOzKbU2vq.jpg',
+    7: TMDB_BASE_URL + '/i66p9aJpaPPd2Y83cRE256R4kiv.jpg',
+    8: TMDB_BASE_URL + '/hqrTAhj21TFwwmSi0LpKMeFWI3i.jpg',
+    9: TMDB_BASE_URL + '/uqQBwMJXkZdMNAr4vJCPBPyoyyP.jpg',
+    10: TMDB_BASE_URL + '/j2qRsT11WL8sX1ULWWxS7opu8Dj.jpg',
+    11: TMDB_BASE_URL + '/uVNfsziEtWZpnAbKevNjArafEGa.jpg',
+    12: TMDB_BASE_URL + '/oEOX17rWyWOx9gNmb9cJAiKqQBa.jpg',
+    13: TMDB_BASE_URL + '/h7duDG1SvsiSJE6gCX5HLNXWQY2.jpg',
+    14: TMDB_BASE_URL + '/9d0lxQiFeuOdX3S0j2rqnOIsYYn.jpg',
+    15: TMDB_BASE_URL + '/tdpp1XqN8PPLrYisXCsLEHJdH1Z.jpg',
+    16: TMDB_BASE_URL + '/nkWkW2xbiF32O2gejy6cXxh7Xu3.jpg',
+    17: TMDB_BASE_URL + '/mEgSQ7Y9MePpemBFhqr00kiO3yK.jpg',
+    18: TMDB_BASE_URL + '/cNQ88xbU1CGDWJOSEscgxvcAVFe.jpg',
+    19: TMDB_BASE_URL + '/4fRwMvaTOgBo7EuVDbze4lOcp9q.jpg',
+    20: TMDB_BASE_URL + '/eqfV0skvBXLxPgxVtBFnPYKMmdp.jpg',
+    21: TMDB_BASE_URL + '/opIfj7VVvK2EIJyqjp5ige2crH9.jpg',
+    22: TMDB_BASE_URL + '/Nou3ZShXaLuK1dDCATV1wJI4h0.jpg',
+    23: TMDB_BASE_URL + '/gT2lMzxWrsOMhlaSMG8BTa9EjwU.jpg',
+    24: TMDB_BASE_URL + '/gUMArcGnsNmsJgQky7vE0cdnf4Y.jpg',
+    25: TMDB_BASE_URL + '/cK6Pn91ZwwO2osSjRNkDPK9qWa2.jpg',
+    26: TMDB_BASE_URL + '/qeCVev1tuehPZ7jWozfYEGtbOOS.jpg',
+    27: TMDB_BASE_URL + '/iofokHZoUB4Qhik4PflvJl8TT6a.jpg'
+  },
+  'Law & Order: Criminal Intent': {
+    1: TMDB_BASE_URL + '/o3iTYx0OHj1IymuO3oOS4HKxXzd.jpg',
+    2: TMDB_BASE_URL + '/udCBGjVLmJlVdllTPU20dbO3F8F.jpg',
+    3: TMDB_BASE_URL + '/i2UZvp4APjV5gDsdMHKX3ZuxuVo.jpg',
+    4: TMDB_BASE_URL + '/pH3A8tDnKLuvkZbT0meNDi2x8aK.jpg',
+    5: TMDB_BASE_URL + '/qcPDJFFEfw0WFmFEEaKpZKdTFuT.jpg',
+    6: TMDB_BASE_URL + '/8KgksZup2nRuZXXwTBoaumHfYKt.jpg',
+    7: TMDB_BASE_URL + '/AbtheMiUwcLcwhDCTmv8MN1ht5Z.jpg',
+    8: TMDB_BASE_URL + '/lW2wNvyKJpeTcmkRBnsCYpM1swv.jpg',
+    9: TMDB_BASE_URL + '/elIKnz6FHYDcCvYZmnvQF6GOstM.jpg',
+    10: TMDB_BASE_URL + '/v4FAvYzSIPwv7CAbWcmtEbILHiE.jpg'
+  },
+  'Law & Order: Trial by Jury': {
+    1: TMDB_BASE_URL + '/9nVHqaRDRqLCMpA2DQW0XSQnu5j.jpg'
+  },
+  'Law & Order: Organized Crime': {
+    1: TMDB_BASE_URL + '/r54Rr8p8kD6tlq1Zem5D2cpDcNO.jpg',
+    2: TMDB_BASE_URL + '/6DP3aGoNEhuyBuckmp0JkP6aGPP.jpg',
+    3: TMDB_BASE_URL + '/8FXtXGGYqXcppuOovCW4WzcSi7d.jpg',
+    4: TMDB_BASE_URL + '/4TyVZ4JdfV7fErK5LiYRtZhjzFV.jpg',
+    5: TMDB_BASE_URL + '/natmRk4Z51zZfDWossGaYt4ta9j.jpg'
+  },
+  'Law & Order: Los Angeles': {
+    1: TMDB_BASE_URL + '/5qqKvcVNQMBQ2J6FZCkPfyOukap.jpg'
+  },
+  'Law & Order: True Crime': {
+    1: TMDB_BASE_URL + '/43twBaeIrCf3oBB0XzgFNOLc7Sx.jpg'
+  },
+  'Law & Order: UK': {
+    1: TMDB_BASE_URL + '/xFdojGK8R9JW87URJtfUM5Grqtc.jpg',
+    2: TMDB_BASE_URL + '/ojbPxgOJya2GMQ7rdOsQwA3Cjz4.jpg',
+    3: TMDB_BASE_URL + '/3tubCsFq55HA3OlyNJq9l90IbbU.jpg',
+    4: TMDB_BASE_URL + '/uOXVevLh2PF8lhVMFyPxBhT2HYU.jpg',
+    5: TMDB_BASE_URL + '/hKIZz1qlQ24FAHFdJ4VRMK4qJ7u.jpg',
+    6: TMDB_BASE_URL + '/yE3dx7Z7qoQXnR5TSEOKWgLzrRq.jpg',
+    7: TMDB_BASE_URL + '/AjgjalbmMIRwkEqc7tnvhxqHLb7.jpg',
+    8: TMDB_BASE_URL + '/8flyATKFquutujdlU816RevgVLe.jpg'
+  },
+  'Conviction': {
+    1: TMDB_BASE_URL + '/vcewv7qpZqQpekBofxfuDHDpWdR.jpg'
+  },
+  'Law & Order Toronto: Criminal Intent': {
+    1: TMDB_BASE_URL + '/omdsNNEo5F1BgywPqHBmc0Tfmhb.jpg',
+    2: TMDB_BASE_URL + '/n2NxrkG3KpZ6FwALqi5uiZF8zXC.jpg',
+    3: TMDB_BASE_URL + '/eqD7W5EGue5Nvg0BNEnoRyMQAcz.jpg'
+  }
+};
+
+// ============================================================
+// FUNÇÕES AUXILIARES
+// ===========================================================
+
 function normalizeForMatch(title) {
+  if (!title) return '';
   return title
     .toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -2863,18 +3022,22 @@ function normalizeForMatch(title) {
 
 function resolveEnglishTitle(title) {
   if (!title) return null;
+
   const normalized = normalizeForMatch(title);
 
-  for (const enTitle of Object.keys(TMDB_SERIES_IDS)) {
+  // Se já está em inglês
+  for (const enTitle of Object.keys(SEASON_POSTERS)) {
     if (normalizeForMatch(enTitle) === normalized) {
       return enTitle;
     }
   }
 
+  // Se está em português, converte
   if (SERIES_TITLE_PT_TO_EN[normalized]) {
     return SERIES_TITLE_PT_TO_EN[normalized];
   }
 
+  // Tenta encontrar por aproximação
   const sortedPtTitles = Object.entries(SERIES_TITLE_PT_TO_EN)
     .sort(([a], [b]) => b.length - a.length);
 
@@ -2887,110 +3050,31 @@ function resolveEnglishTitle(title) {
   return null;
 }
 
-
-    const posterCache = {};
-
-    function getPlaceholderSVG(seriesTitle, season) {
-      const initials = seriesTitle
-        .split(' ')
-        .filter(word => word.length > 0 && word[0].match(/[a-zA-Z]/))
-        .map(word => word[0].toUpperCase())
-        .join('')
-        .substring(0, 3);
-
-      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="150" viewBox="0 0 100 150"><rect width="100%" height="100%" fill="%231a237e"/><text x="50%" y="42%" fill="%23d4af37" font-size="18" font-weight="bold" text-anchor="middle" dominant-baseline="middle">${initials}</text><text x="50%" y="58%" fill="%23ffffff" font-size="12" text-anchor="middle" dominant-baseline="middle">T${season}</text></svg>`;
-
-      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
-    }
-
-    // Fila para limitar requisições simultâneas ao TMDB
-    const posterFetchQueue = [];
-    let posterFetchRunning = 0;
-    const MAX_POSTER_FETCHES = 5;
-
-    function processPosterQueue() {
-      if (posterFetchQueue.length === 0 || posterFetchRunning >= MAX_POSTER_FETCHES) return;
-
-      posterFetchRunning++;
-      const { seriesTitle, season, resolve, reject } = posterFetchQueue.shift();
-
-      fetchSeasonPosterInternal(seriesTitle, season)
-        .then(resolve)
-        .catch(reject)
-        .finally(() => {
-          posterFetchRunning--;
-          processPosterQueue();
-        });
-    }
-
-    function enqueuePosterFetch(seriesTitle, season) {
-      return new Promise((resolve, reject) => {
-        posterFetchQueue.push({ seriesTitle, season, resolve, reject });
-        processPosterQueue();
-      });
-    }
-
-    async function fetchSeasonPosterInternal(seriesTitle, season) {
-  const cacheKey = `${seriesTitle}-S${season}`;
-
-  if (posterCache[cacheKey]) return posterCache[cacheKey];
-
-  const englishTitle = resolveEnglishTitle(seriesTitle);
-
-  if (!englishTitle) {
-    console.warn('Série não encontrada no TMDB_SERIES_IDS:', seriesTitle);
-    const fallback = getPlaceholderSVG(seriesTitle, season);
-    posterCache[cacheKey] = fallback;
-    return fallback;
-  }
-
-  const seriesId = TMDB_SERIES_IDS[englishTitle];
-
-  try {
-    const seasonResponse = await fetch(
-      `https://api.themoviedb.org/3/tv/${seriesId}/season/${season}/images?api_key=${TMDB_API_KEY}&include_image_language=en-US,pt-BR,null`
-    );
-
-    if (seasonResponse.ok) {
-      const seasonData = await seasonResponse.json();
-      if (seasonData.posters && seasonData.posters.length > 0) {
-        const posterUrl = `${TMDB_BASE_URL}${seasonData.posters[0].file_path}`;
-        posterCache[cacheKey] = posterUrl;
-        return posterUrl;
-      }
-    }
-
-    const seriesResponse = await fetch(
-      `https://api.themoviedb.org/3/tv/${seriesId}/images?api_key=${TMDB_API_KEY}&include_image_language=en-US,pt-BR,null`
-    );
-
-    if (seriesResponse.ok) {
-      const seriesData = await seriesResponse.json();
-      if (seriesData.posters && seriesData.posters.length > 0) {
-        const posterUrl = `${TMDB_BASE_URL}${seriesData.posters[0].file_path}`;
-        posterCache[cacheKey] = posterUrl;
-        return posterUrl;
-      }
-    }
-  } catch (error) {
-    console.warn('Erro ao buscar pôster:', error);
-  }
-
-  const fallback = getPlaceholderSVG(seriesTitle, season);
-  posterCache[cacheKey] = fallback;
-  return fallback;
-}
-
 function fetchSeasonPoster(seriesTitle, season) {
-  const cacheKey = `${seriesTitle}-S${season}`;
+  const englishTitle = resolveEnglishTitle(seriesTitle) || seriesTitle;
+  const normalizedTitle = normalizeForMatch(englishTitle);
 
-  if (posterCache[cacheKey]) {
-    return Promise.resolve(posterCache[cacheKey]);
+  for (const [enTitle, posters] of Object.entries(SEASON_POSTERS)) {
+    if (normalizeForMatch(enTitle) === normalizedTitle) {
+      return Promise.resolve(posters[season] || null);
+    }
   }
 
-  return enqueuePosterFetch(seriesTitle, season);
+  return Promise.resolve(null);
 }
 
+function getPlaceholderSVG(seriesTitle, season) {
+  const initials = seriesTitle
+    .split(' ')
+    .filter(word => word.length > 0 && word[0].match(/[a-zA-Z]/))
+    .map(word => word[0].toUpperCase())
+    .join('')
+    .substring(0, 3);
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="150" viewBox="0 0 100 150"><rect width="100%" height="100%" fill="%231a237e"/><text x="50%" y="42%" fill="%23d4af37" font-size="18" font-weight="bold" text-anchor="middle" dominant-baseline="middle">${initials}</text><text x="50%" y="58%" fill="%23ffffff" font-size="12" text-anchor="middle" dominant-baseline="middle">T${season}</text></svg>`;
+
+  return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+}
 
     const internationalOrder = ['conviction', 'russia-ci', 'russia-svu', 'paris', 'uk', 'toronto'];
 
