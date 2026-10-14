@@ -3385,7 +3385,9 @@ function fetchSeasonPoster(seriesTitle, season) {
     // Carrega pôsteres em segundo plano respeitando a fila
     const posterJobs = filtered.map(ep => {
       const posterId = `poster-${ep.key.replace(/[^a-zA-Z0-9]/g, '-')}`;
-      return fetchSeasonPoster(ep.seriesTitleOriginal || ep.seriesTitle, ep.season)
+      const series = seriesData[ep.seriesId];
+      const titleForPoster = series && series.titleOriginal ? series.titleOriginal : ep.seriesTitle;
+      return fetchSeasonPoster(titleForPoster, ep.season)
         .then(url => {
           if (url) {
             const img = document.getElementById(posterId);
