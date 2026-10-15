@@ -3253,9 +3253,14 @@ function getPlaceholderSVG(seriesTitle, season) {
       const watchedCount = countWatched(series);
       const progress = totalEpisodes > 0 ? Math.round((watchedCount / totalEpisodes) * 100) : 0;
 
+      const fallbackImage = 'https://via.placeholder.com/300x450?text=Sem+Poster';
+      
       let html = `
         <div class="series-header fade-in">
-          <img src="${series.poster}" alt="${series.title}" class="series-poster" onerror="this.src='${series.image}'">
+          <img src="${series.poster || fallbackImage}"
+               alt="${series.title}" 
+               class="series-poster" 
+               onerror="this.src='${series.image || fallbackImage}'">
           <div class="series-info">
             <h2>${series.title}</h2>
 	          ${series.titleOriginal ? `<div class="series-title-original">(${series.titleOriginal})</div>`: ''}
@@ -3281,7 +3286,7 @@ function getPlaceholderSVG(seriesTitle, season) {
           </div>
         </div>
 
-              `;
+      `;
 
       const seasonNumbers = Object.keys(series.seasonsData).map(Number).sort((a, b) => a - b);
 
@@ -3312,11 +3317,11 @@ function getPlaceholderSVG(seriesTitle, season) {
           return;
         }
 
-  const filteredEpisodes = filterEpisodes(seriesId, season, episodes);
-  if (filteredEpisodes.length === 0 && currentSearch) return;
+        const filteredEpisodes = filterEpisodes(seriesId, season, episodes);
+        if (filteredEpisodes.length === 0 && currentSearch) return;
                  
-  const seasonWatched = episodes.filter(ep => isEpisodeWatched(generateEpisodeKey(seriesId, season, ep.episode))).length;
-  const seasonProgress = episodes.length > 0 ? Math.round((seasonWatched / episodes.length) * 100) : 0;
+        const seasonWatched = episodes.filter(ep => isEpisodeWatched(generateEpisodeKey(seriesId, season, ep.episode))).length;
+        const seasonProgress = episodes.length > 0 ? Math.round((seasonWatched / episodes.length) * 100) : 0;
   
         html += `
           <div class="season ${isCollapsed ? 'collapsed' : ''} fade-in">
@@ -3355,9 +3360,9 @@ function getPlaceholderSVG(seriesTitle, season) {
         });
       });
     }, 100);
-    
+
     return html;
-    }
+  }
 
     function renderCrossoverBadge(crossover) {
       if (!crossover) return '';
