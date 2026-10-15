@@ -3258,7 +3258,7 @@ function getPlaceholderSVG(seriesTitle, season) {
           <img src="${series.poster}" alt="${series.title}" class="series-poster" onerror="this.src='${series.image}'">
           <div class="series-info">
             <h2>${series.title}</h2>
-	    ${series.titleOriginal ? `<div class="series-title-original">(${series.titleOriginal})</div>`: ''}
+	          ${series.titleOriginal ? `<div class="series-title-original">(${series.titleOriginal})</div>`: ''}
             <div class="series-meta">
               <span>📅 ${series.years}</span>
               <span>📺 ${series.seasons} temporada${series.seasons > 1 ? 's' : ''}</span>
@@ -3339,20 +3339,24 @@ function getPlaceholderSVG(seriesTitle, season) {
 
       document.getElementById('content').innerHTML = html;
 
-      // Carrega os posters reais das temporadas
-      const seriesTitle = series.title;
-      Object.keys(series.seasonsData).map(Number).sort((a, b) => a - b).forEach(season => {
-        const episodes = series.seasonsData[season] || [];
-        episodes.forEach(async ep => {
-          const key = generateEpisodeKey(seriesId, season, ep.episode);
-          const posterId = `poster-${key.replace(/[^a-zA-Z0-9]/g, '-')}`;
-          const url = await fetchSeasonPoster(seriesTitle, season);
-          if (url) {
+      // Carrega os posters reais das temporadas depois que o HTML já estiver na tela
+      setTimeout(() => {
+        const seriesTitle = series.title;
+        Object.keys(series.seasonsData).map(Number).sort((a, b) => a - b).forEach(season => {
+          const episodes = series.seasonsData[season] || [];
+          episodes.forEach(async ep => {
+            const key = generateEpisodeKey(seriesId, season, ep.episode);
+            const posterId = `poster-${key.replace(/[^a-zA-Z0-9]/g, '-')}`;
+            const url = await fetchSeasonPoster(seriesTitle, season);
+            if (url) {
             const img = document.getElementById(posterId);
             if (img) img.src = url;
           }
         });
       });
+    }, 100);
+    
+    return html;
     }
 
     function renderCrossoverBadge(crossover) {
