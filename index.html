@@ -732,6 +732,26 @@
       align-items: center;
       gap: 8px;
     }
+
+    .ongoing-season {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #1e293b;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    .ongoing-season p {
+      color: #fbbf24;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+    }
+
+    .ongoing-season span {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
@@ -780,10 +800,10 @@
       lo: {
         id: 'lo',
         titleOriginal: 'Law & Order', 
-	title: 'Lei & Ordem',
+	      title: 'Lei & Ordem',
         shortTitle: 'L&O',
         years: '1990–Presente',
-        seasons: 25,
+        seasons: 26,
         image: 'https://image.tmdb.org/t/p/original/dEDC93cV4n4oJuIEzTCBfPM8dCs.jpg',
         description: 'A série original que deu início ao universo. Cada episódio divide seu tempo entre a investigação policial do crime e o julgamento dos acusados em Nova York.',
         seasonsData: {
@@ -932,161 +952,161 @@
               { episode: 21, title: 'Em Causa Própria (Pro Se)', airDate: '1996-05-08' },
               { episode: 22, title: 'Saudade de Casa (Homesick)', airDate: '1996-05-15' },
               { episode: 23, title: 'Consequências (Aftershock)', airDate: '1996-05-22' }
-	  ],
-	  7: [
+         ],
+	       7: [
               { episode: 1, title: 'Causa da Morte (Causa Mortis)', airDate: '1996-09-18' },
-  	      { episode: 2, title: 'Identidade (I.D.)', airDate: '1996-09-25' },
+  	          { episode: 2, title: 'Identidade (I.D.)', airDate: '1996-09-25' },
               { episode: 3, title: 'Boa Garota (Good Girl)', airDate: '1996-10-07' },
-  	      { episode: 4, title: 'Sobrevivente (Survivor)', airDate: '1996-10-23' },
-  	      { episode: 5, title: 'Corrupção (Corruption)', airDate: '1996-10-30' },
-  	      { episode: 6, title: 'Duplo Padrão (Double Blind)', airDate: '1996-11-06' },
-  	      { episode: 7, title: 'Caloteiro (Deadbeat)', airDate: '1996-11-13' },
-  	      { episode: 8, title: 'Negócio de Família (Family Business)', airDate: '1996-11-20' },
-  	      { episode: 9, title: 'Armadilha (Entrapment)', airDate: '1997-01-08' },
-  	      { episode: 10, title: 'Legado (Legacy)', airDate: '1997-01-15' },
-  	      { episode: 11, title: 'Ameaça (Menace)', airDate: '1997-02-05' },
-  	      { episode: 12, title: 'Permuta (Barter)', airDate: '1997-02-12' },
-  	      { episode: 13, title: 'Matrimônio (Matrimony)', airDate: '1997-02-19' },
-  	      { episode: 14, title: 'Mãe Trabalhadora (Working Mom)', airDate: '1997-02-26' },
-  	      { episode: 15, title: 'Garota do Cinema (D-Girl)', airDate: '1997-03-13' },
-  	      { episode: 16, title: 'Reviravolta (Turnaround)', airDate: '1997-03-20' },
-  	      { episode: 17, title: 'Espetáculo (Showtime)', airDate: '1997-03-27' },
-  	      { episode: 18, title: 'Cão Raivoso (Mad Dog)', airDate: '1997-04-02' },
-  	      { episode: 19, title: 'Dobrar a Aposta (Double Down)', airDate: '1997-04-16' },
-  	      { episode: 20, title: 'Nós Gostamos do Mike (We Like Mike)', airDate: '1997-04-30' },
-  	      { episode: 21, title: 'Paixão (Passion)', airDate: '1997-05-07' },
-  	      { episode: 22, title: 'Passado Imperfeito (Past Imperfect)', airDate: '1997-05-14' },
-  	      { episode: 23, title: 'Terminal (Terminal)', airDate: '1997-05-21' }
-	  ],
-	  8: [
+              { episode: 4, title: 'Sobrevivente (Survivor)', airDate: '1996-10-23' },
+              { episode: 5, title: 'Corrupção (Corruption)', airDate: '1996-10-30' },
+              { episode: 6, title: 'Duplo Padrão (Double Blind)', airDate: '1996-11-06' },
+              { episode: 7, title: 'Caloteiro (Deadbeat)', airDate: '1996-11-13' },
+              { episode: 8, title: 'Negócio de Família (Family Business)', airDate: '1996-11-20' },
+              { episode: 9, title: 'Armadilha (Entrapment)', airDate: '1997-01-08' },
+              { episode: 10, title: 'Legado (Legacy)', airDate: '1997-01-15' },
+              { episode: 11, title: 'Ameaça (Menace)', airDate: '1997-02-05' },
+              { episode: 12, title: 'Permuta (Barter)', airDate: '1997-02-12' },
+              { episode: 13, title: 'Matrimônio (Matrimony)', airDate: '1997-02-19' },
+              { episode: 14, title: 'Mãe Trabalhadora (Working Mom)', airDate: '1997-02-26' },
+              { episode: 15, title: 'Garota do Cinema (D-Girl)', airDate: '1997-03-13' },
+              { episode: 16, title: 'Reviravolta (Turnaround)', airDate: '1997-03-20' },
+              { episode: 17, title: 'Espetáculo (Showtime)', airDate: '1997-03-27' },
+              { episode: 18, title: 'Cão Raivoso (Mad Dog)', airDate: '1997-04-02' },
+              { episode: 19, title: 'Dobrar a Aposta (Double Down)', airDate: '1997-04-16' },
+              { episode: 20, title: 'Nós Gostamos do Mike (We Like Mike)', airDate: '1997-04-30' },
+              { episode: 21, title: 'Paixão (Passion)', airDate: '1997-05-07' },
+              { episode: 22, title: 'Passado Imperfeito (Past Imperfect)', airDate: '1997-05-14' },
+              { episode: 23, title: 'Terminal (Terminal)', airDate: '1997-05-21' }
+          ],
+	        8: [
               { episode: 1, title: 'Emoção (Thrill)', airDate: '1997-09-24' },
-  	      { episode: 2, title: 'Negação (Denial)', airDate: '1997-10-08' },
-  	      { episode: 3, title: 'Azuis da Marinha (Navy Blues)', airDate: '1997-10-15' },
- 	      { episode: 4, title: 'Colheita (Harvest)', airDate: '1997-10-29' },
-  	      { episode: 5, title: 'Anulação (Nullification)', airDate: '1997-11-05' },
-  	      { episode: 6, title: 'Bebê, É Você — Parte 1 (Baby, It\'s You — Part 1)', airDate: '1997-11-12' },
-  	      { episode: 7, title: 'Sangue (Blood)', airDate: '1997-11-19' },
-  	      { episode: 8, title: 'Sombra (Shadow)', airDate: '1997-11-26' },
-  	      { episode: 9, title: 'Queimado (Burned)', airDate: '1997-12-10' },
-  	      { episode: 10, title: 'Ritual (Ritual)', airDate: '1997-12-17' },
-  	      { episode: 11, title: 'Sob a Influência (Under the Influence)', airDate: '1998-01-07' },
-  	      { episode: 12, title: 'Especialista (Expert)', airDate: '1998-01-21' },
-  	      { episode: 13, title: 'Rejeitado (Castoff)', airDate: '1998-01-28' },
-  	      { episode: 14, title: 'Luto (Grief)', airDate: '1998-02-04' },
-  	      { episode: 15, title: 'Cara a Cara (Faccia a Faccia)', airDate: '1998-02-25' },
-  	      { episode: 16, title: 'Divórcio (Divorce)', airDate: '1998-03-04' },
-  	      { episode: 17, title: 'Portador (Carrier)', airDate: '1998-04-01' },
-  	      { episode: 18, title: 'Perseguidor (Stalker)', airDate: '1998-04-15' },
-  	      { episode: 19, title: 'Desaparecida (Disappeared)', airDate: '1998-04-22' },
-  	      { episode: 20, title: 'Fardo (Burden)', airDate: '1998-04-24' },
-  	      { episode: 21, title: 'Garota Má (Bad Girl)', airDate: '1998-04-29' },
-  	      { episode: 22, title: 'Danificada (Damaged)', airDate: '1998-05-06' },
-  	      { episode: 23, title: 'Imprensa Marrom (Tabloid)', airDate: '1998-05-13' },
-  	      { episode: 24, title: 'Monstro (Monster)', airDate: '1998-05-20' }
-	  ],
+              { episode: 2, title: 'Negação (Denial)', airDate: '1997-10-08' },
+              { episode: 3, title: 'Azuis da Marinha (Navy Blues)', airDate: '1997-10-15' },
+              { episode: 4, title: 'Colheita (Harvest)', airDate: '1997-10-29' },
+              { episode: 5, title: 'Anulação (Nullification)', airDate: '1997-11-05' },
+              { episode: 6, title: 'Bebê, É Você — Parte 1 (Baby, It\'s You — Part 1)', airDate: '1997-11-12' },
+              { episode: 7, title: 'Sangue (Blood)', airDate: '1997-11-19' },
+              { episode: 8, title: 'Sombra (Shadow)', airDate: '1997-11-26' },
+              { episode: 9, title: 'Queimado (Burned)', airDate: '1997-12-10' },
+              { episode: 10, title: 'Ritual (Ritual)', airDate: '1997-12-17' },
+              { episode: 11, title: 'Sob a Influência (Under the Influence)', airDate: '1998-01-07' },
+              { episode: 12, title: 'Especialista (Expert)', airDate: '1998-01-21' },
+              { episode: 13, title: 'Rejeitado (Castoff)', airDate: '1998-01-28' },
+              { episode: 14, title: 'Luto (Grief)', airDate: '1998-02-04' },
+              { episode: 15, title: 'Cara a Cara (Faccia a Faccia)', airDate: '1998-02-25' },
+              { episode: 16, title: 'Divórcio (Divorce)', airDate: '1998-03-04' },
+              { episode: 17, title: 'Portador (Carrier)', airDate: '1998-04-01' },
+              { episode: 18, title: 'Perseguidor (Stalker)', airDate: '1998-04-15' },
+              { episode: 19, title: 'Desaparecida (Disappeared)', airDate: '1998-04-22' },
+              { episode: 20, title: 'Fardo (Burden)', airDate: '1998-04-24' },
+              { episode: 21, title: 'Garota Má (Bad Girl)', airDate: '1998-04-29' },
+              { episode: 22, title: 'Danificada (Damaged)', airDate: '1998-05-06' },
+              { episode: 23, title: 'Imprensa Marrom (Tabloid)', airDate: '1998-05-13' },
+              { episode: 24, title: 'Monstro (Monster)', airDate: '1998-05-20' }
+          ],
           9: [
-  	      { episode: 1, title: 'Querido (Cherished)', airDate: '1998-09-23' },
-  	      { episode: 2, title: 'DWB — Dirigindo Enquanto Negro (DWB)', airDate: '1998-10-07' },
-  	      { episode: 3, title: 'Isca (Bait)', airDate: '1998-10-14' },
-  	      { episode: 4, title: 'Voo (Flight)', airDate: '1998-10-21' },
-  	      { episode: 5, title: 'Agonia (Agony)', airDate: '1998-11-04' },
-  	      { episode: 6, title: 'Embaralhado (Scrambled)', airDate: '1998-11-11' },
-  	      { episode: 7, title: 'Veneno (Venom)', airDate: '1998-11-18' },
-  	      { episode: 8, title: 'Punk (Punk)', airDate: '1998-11-25' },
-  	      { episode: 9, title: 'Verdadeiro Norte (True North)', airDate: '1998-12-09' },
-  	      { episode: 10, title: 'Ódio (Hate)', airDate: '1999-01-06' },
-  	      { episode: 11, title: 'Muralhas (Ramparts)', airDate: '1999-01-13' },
-  	      { episode: 12, title: 'Refúgio (Haven)', airDate: '1999-02-10' },
-  	      { episode: 13, title: 'Caçadores (Hunters)', airDate: '1999-02-10' },
-  	      { episode: 14, title: 'Espetáculo Paralelo — Parte 1 (Sideshow)', airDate: '1999-02-17' },
-  	      { episode: 15, title: 'Discípulo (Disciple)', airDate: '1999-02-24' },
-  	      { episode: 16, title: 'Dano (Harm)', airDate: '1999-03-03' },
-  	      { episode: 17, title: 'Escudo (Shield)', airDate: '1999-03-24' },
-  	      { episode: 18, title: 'Juvenil (Juvenile)', airDate: '1999-04-14' },
-  	      { episode: 19, title: 'Tábula Rasa (Tabula Rasa)', airDate: '1999-04-21' },
-  	      { episode: 20, title: 'Império (Empire)', airDate: '1999-05-05' },
-  	      { episode: 21, title: 'Ambicioso (Ambitious)', airDate: '1999-05-12' },
-  	      { episode: 22, title: 'Admissões (Admissions)', airDate: '1999-05-19' },
-  	      { episode: 23, title: 'Refúgio — Parte 1 (Refuge)', airDate: '1999-05-26' },
-  	      { episode: 24, title: 'Refúgio — Parte 2 (Refuge)', airDate: '1999-05-26' }
-	  ],
-	  10: [
-  	       { episode: 1, title: 'Mostra de Armas (Gunshow)', airDate: '1999-09-22' },
-  	       { episode: 2, title: 'Assassinos (Killerz)', airDate: '1999-09-29' },
-  	       { episode: 3, title: 'Não Reanimar (DNR)', airDate: '1999-10-06' },
-  	       { episode: 4, title: 'Fusão (Merger)', airDate: '1999-10-13' },
-  	       { episode: 5, title: 'Justiça (Justice)', airDate: '1999-11-10' },
-  	       { episode: 6, title: 'Maratona (Marathon)', airDate: '1999-11-17' },
-  	       { episode: 7, title: 'Patsy (Patsy)', airDate: '1999-11-24' },
-  	       { episode: 8, title: 'Dinheiro de Sangue (Blood Money)', airDate: '1999-12-01' },
-  	       { episode: 9, title: 'Pôr do Sol (Sundown)', airDate: '1999-12-15' },
-  	       { episode: 10, title: 'Na Responsabilidade dos Pais (Loco Parentis)', airDate: '2000-01-05' },
-  	       { episode: 11, title: 'Colisão (Collision)', airDate: '2000-01-26' },
-  	       { episode: 12, title: 'Leite Materno (Mother\'s Milk)', airDate: '2000-02-09' },
- 	       { episode: 13, title: 'Pânico (Panic)', airDate: '2000-02-16' },
-  	       { episode: 14, title: 'Intitulado — Parte 2 (Entitled - Part 2)', airDate: '2000-02-18', crossover: { type: 'end', from: 'svu', label: 'Continuação do crossover iniciado em SVU S01E15' } },
-  	       { episode: 15, title: 'Tolos por Amor (Fools for Love)', airDate: '2000-02-23' },
-  	       { episode: 16, title: 'Negocie Isto (Trade This)', airDate: '2000-03-01' },
-  	       { episode: 17, title: 'Negro, Branco e Azul (Black, White, and Blue)', airDate: '2000-03-22' },
-  	       { episode: 18, title: 'Mega (Mega)', airDate: '2000-04-05' },
-  	       { episode: 19, title: 'Renda-se, Dorothy (Surrender Dorothy)', airDate: '2000-04-26' },
-  	       { episode: 20, title: 'Sem Título (Untitled)', airDate: '2000-05-03' },
-  	       { episode: 21, title: 'Narcose (Narcosis)', airDate: '2000-05-10' },
-  	       { episode: 22, title: 'Alto e Baixo (High & Low)', airDate: '2000-05-17' },
-  	       { episode: 23, title: 'Enrijecido (Stiff)', airDate: '2000-05-24' },
-  	       { episode: 24, title: 'Vá com Deus (Vaya Con Dios)', airDate: '2000-05-24' }
-	  ],
-	  11:[
-  { episode: 1, title: 'Resistência (Endurance)', airDate: '2000-10-18' },
-  { episode: 2, title: 'Justiça na catraca (Turnstile Justice)', airDate: '2000-10-25' },
-  { episode: 3, title: 'Dissonância (Dissonance)', airDate: '2000-11-01' },
-  { episode: 4, title: 'Impasse (Standoff)', airDate: '2000-11-08' },
-  { episode: 5, title: 'Retorno (Return)', airDate: '2000-11-15' },
-  { episode: 6, title: 'Queime, bebê, queime (Burn Baby, Burn)', airDate: '2000-11-22' },
-  { episode: 7, title: 'Reparações (Amends)', airDate: '2000-11-29' },
-  { episode: 8, title: 'Gelo fino (Thin Ice)', airDate: '2000-12-20' },
-  { episode: 9, title: 'Hubris (Hubris)', airDate: '2001-01-10' },
-  { episode: 10, title: 'De quem é o macaco, afinal? (Whose Monkey Is It Anyway?)', airDate: '2001-01-17' },
-  { episode: 11, title: 'Domingo no parque com Jorge (Sunday in the Park with Jorge)', airDate: '2001-01-24' },
-  { episode: 12, title: 'Terra devastada da adolescência (Teenage Wasteland)', airDate: '2001-02-07' },
-  { episode: 13, title: 'Fobia (Phobia)', airDate: '2001-02-14' },
-  { episode: 14, title: 'Uma temporada perdida (A Losing Season)', airDate: '2001-02-21' },
-  { episode: 15, title: 'Levado pela correnteza (Swept Away)', airDate: '2001-02-28' },
-  { episode: 16, title: 'Vaia do Bronx (Bronx Cheer)', airDate: '2001-03-14' },
-  { episode: 17, title: 'Ego (Ego)', airDate: '2001-03-21' },
-  { episode: 18, title: 'Mentira branca (White Lie)', airDate: '2001-04-04' },
-  { episode: 19, title: 'Golpe de chicote (Whiplash)', airDate: '2001-04-18' },
-  { episode: 20, title: 'Todos os meus filhos (All My Children)', airDate: '2001-05-02' },
-  { episode: 21, title: 'O protetor do irmão (Brother\'s Keeper)', airDate: '2001-05-09' },
-  { episode: 22, title: 'Confusão na escola (School Daze)', airDate: '2001-05-16' },
-  { episode: 23, title: 'Juiz do terror (Judge Dread)', airDate: '2001-05-23' },
-  { episode: 24, title: 'Voto profundo (Deep Vote)', airDate: '2001-05-23' }
-],
-12: [
-  { episode: 1, title: 'Quem soltou os cachorros? (Who Let the Dogs Out?)', airDate: '2001-09-26' },
-  { episode: 2, title: 'Forças armadas (Armed Forces)', airDate: '2001-10-03' },
-  { episode: 3, title: 'Por amor ou dinheiro (For Love or Money)', airDate: '2001-10-10' },
-  { episode: 4, title: 'Soldado da fortuna (Soldier of Fortune)', airDate: '2001-10-24' },
-  { episode: 5, title: 'Posse (Possession)', airDate: '2001-10-31' },
-  { episode: 6, title: 'Antigamente famoso (Formerly Famous)', airDate: '2001-11-07' },
-  { episode: 7, title: 'O mito das impressões digitais (Myth of Fingerprints)', airDate: '2001-11-14' },
-  { episode: 8, title: 'O fogo desta vez (The Fire This Time)', airDate: '2001-11-21' },
-  { episode: 9, title: 'Noite de três cães (3 Dawg Night)', airDate: '2001-11-28' },
-  { episode: 10, title: 'Preconceito (Prejudice)', airDate: '2001-12-12' },
-  { episode: 11, title: 'A coleira (The Collar)', airDate: '2002-01-09' },
-  { episode: 12, title: 'Sem cobertura (Undercovered)', airDate: '2002-01-16' },
-  { episode: 13, title: 'DR 1-102 (DR 1-102)', airDate: '2002-01-30' },
-  { episode: 14, title: 'Desaparecida (Missing)', airDate: '2002-02-06' },
-  { episode: 15, title: 'Nação do acesso (Access Nation)', airDate: '2002-02-27' },
-  { episode: 16, title: 'Renascido (Born Again)', airDate: '2002-03-06' },
-  { episode: 17, title: 'A garota mais provável (Girl Most Likely)', airDate: '2002-03-27' },
-  { episode: 18, title: 'Direitos iguais (Equal Rights)', airDate: '2002-04-03' },
-  { episode: 19, title: 'Abate (Slaughter)', airDate: '2002-04-10' },
-  { episode: 20, title: 'Deslumbrado (Dazzled)', airDate: '2002-04-24' },
-  { episode: 21, title: 'Jogo sujo (Foul Play)', airDate: '2002-05-01' },
-  { episode: 22, title: 'Relação advogado-cliente (Attorney Client)', airDate: '2002-05-08' },
-  { episode: 23, title: 'Oximoro (Oxymoron)', airDate: '2002-05-15' },
-  { episode: 24, title: 'Patriota (Patriot)', airDate: '2002-05-22' }
+              { episode: 1, title: 'Querido (Cherished)', airDate: '1998-09-23' },
+              { episode: 2, title: 'DWB — Dirigindo Enquanto Negro (DWB)', airDate: '1998-10-07' },
+              { episode: 3, title: 'Isca (Bait)', airDate: '1998-10-14' },
+              { episode: 4, title: 'Voo (Flight)', airDate: '1998-10-21' },
+              { episode: 5, title: 'Agonia (Agony)', airDate: '1998-11-04' },
+              { episode: 6, title: 'Embaralhado (Scrambled)', airDate: '1998-11-11' },
+              { episode: 7, title: 'Veneno (Venom)', airDate: '1998-11-18' },
+              { episode: 8, title: 'Punk (Punk)', airDate: '1998-11-25' },
+              { episode: 9, title: 'Verdadeiro Norte (True North)', airDate: '1998-12-09' },
+              { episode: 10, title: 'Ódio (Hate)', airDate: '1999-01-06' },
+              { episode: 11, title: 'Muralhas (Ramparts)', airDate: '1999-01-13' },
+              { episode: 12, title: 'Refúgio (Haven)', airDate: '1999-02-10' },
+              { episode: 13, title: 'Caçadores (Hunters)', airDate: '1999-02-10' },
+              { episode: 14, title: 'Espetáculo Paralelo — Parte 1 (Sideshow)', airDate: '1999-02-17' },
+              { episode: 15, title: 'Discípulo (Disciple)', airDate: '1999-02-24' },
+              { episode: 16, title: 'Dano (Harm)', airDate: '1999-03-03' },
+              { episode: 17, title: 'Escudo (Shield)', airDate: '1999-03-24' },
+              { episode: 18, title: 'Juvenil (Juvenile)', airDate: '1999-04-14' },
+              { episode: 19, title: 'Tábula Rasa (Tabula Rasa)', airDate: '1999-04-21' },
+              { episode: 20, title: 'Império (Empire)', airDate: '1999-05-05' },
+              { episode: 21, title: 'Ambicioso (Ambitious)', airDate: '1999-05-12' },
+              { episode: 22, title: 'Admissões (Admissions)', airDate: '1999-05-19' },
+              { episode: 23, title: 'Refúgio — Parte 1 (Refuge)', airDate: '1999-05-26' },
+              { episode: 24, title: 'Refúgio — Parte 2 (Refuge)', airDate: '1999-05-26' }
+         ],
+	       10: [
+              { episode: 1, title: 'Mostra de Armas (Gunshow)', airDate: '1999-09-22' },
+              { episode: 2, title: 'Assassinos (Killerz)', airDate: '1999-09-29' },
+              { episode: 3, title: 'Não Reanimar (DNR)', airDate: '1999-10-06' },
+              { episode: 4, title: 'Fusão (Merger)', airDate: '1999-10-13' },
+              { episode: 5, title: 'Justiça (Justice)', airDate: '1999-11-10' },
+              { episode: 6, title: 'Maratona (Marathon)', airDate: '1999-11-17' },
+              { episode: 7, title: 'Patsy (Patsy)', airDate: '1999-11-24' },
+              { episode: 8, title: 'Dinheiro de Sangue (Blood Money)', airDate: '1999-12-01' },
+              { episode: 9, title: 'Pôr do Sol (Sundown)', airDate: '1999-12-15' },
+              { episode: 10, title: 'Na Responsabilidade dos Pais (Loco Parentis)', airDate: '2000-01-05' },
+              { episode: 11, title: 'Colisão (Collision)', airDate: '2000-01-26' },
+              { episode: 12, title: 'Leite Materno (Mother\'s Milk)', airDate: '2000-02-09' },
+              { episode: 13, title: 'Pânico (Panic)', airDate: '2000-02-16' },
+              { episode: 14, title: 'Intitulado — Parte 2 (Entitled - Part 2)', airDate: '2000-02-18', crossover: { type: 'end', from: 'svu', label: 'Continuação do crossover iniciado em SVU S01E15' } },
+              { episode: 15, title: 'Tolos por Amor (Fools for Love)', airDate: '2000-02-23' },
+              { episode: 16, title: 'Negocie Isto (Trade This)', airDate: '2000-03-01' },
+              { episode: 17, title: 'Negro, Branco e Azul (Black, White, and Blue)', airDate: '2000-03-22' },
+              { episode: 18, title: 'Mega (Mega)', airDate: '2000-04-05' },
+              { episode: 19, title: 'Renda-se, Dorothy (Surrender Dorothy)', airDate: '2000-04-26' },
+              { episode: 20, title: 'Sem Título (Untitled)', airDate: '2000-05-03' },
+              { episode: 21, title: 'Narcose (Narcosis)', airDate: '2000-05-10' },
+              { episode: 22, title: 'Alto e Baixo (High & Low)', airDate: '2000-05-17' },
+              { episode: 23, title: 'Enrijecido (Stiff)', airDate: '2000-05-24' },
+              { episode: 24, title: 'Vá com Deus (Vaya Con Dios)', airDate: '2000-05-24' }
+	        ],
+	        11:[
+              { episode: 1, title: 'Resistência (Endurance)', airDate: '2000-10-18' },
+              { episode: 2, title: 'Justiça na catraca (Turnstile Justice)', airDate: '2000-10-25' },
+              { episode: 3, title: 'Dissonância (Dissonance)', airDate: '2000-11-01' },
+              { episode: 4, title: 'Impasse (Standoff)', airDate: '2000-11-08' },
+              { episode: 5, title: 'Retorno (Return)', airDate: '2000-11-15' },
+              { episode: 6, title: 'Queime, bebê, queime (Burn Baby, Burn)', airDate: '2000-11-22' },
+              { episode: 7, title: 'Reparações (Amends)', airDate: '2000-11-29' },
+              { episode: 8, title: 'Gelo fino (Thin Ice)', airDate: '2000-12-20' },
+              { episode: 9, title: 'Hubris (Hubris)', airDate: '2001-01-10' },
+              { episode: 10, title: 'De quem é o macaco, afinal? (Whose Monkey Is It Anyway?)', airDate: '2001-01-17' },
+              { episode: 11, title: 'Domingo no parque com Jorge (Sunday in the Park with Jorge)', airDate: '2001-01-24' },
+              { episode: 12, title: 'Terra devastada da adolescência (Teenage Wasteland)', airDate: '2001-02-07' },
+              { episode: 13, title: 'Fobia (Phobia)', airDate: '2001-02-14' },
+              { episode: 14, title: 'Uma temporada perdida (A Losing Season)', airDate: '2001-02-21' },
+              { episode: 15, title: 'Levado pela correnteza (Swept Away)', airDate: '2001-02-28' },
+              { episode: 16, title: 'Vaia do Bronx (Bronx Cheer)', airDate: '2001-03-14' },
+              { episode: 17, title: 'Ego (Ego)', airDate: '2001-03-21' },
+              { episode: 18, title: 'Mentira branca (White Lie)', airDate: '2001-04-04' },
+              { episode: 19, title: 'Golpe de chicote (Whiplash)', airDate: '2001-04-18' },
+              { episode: 20, title: 'Todos os meus filhos (All My Children)', airDate: '2001-05-02' },
+              { episode: 21, title: 'O protetor do irmão (Brother\'s Keeper)', airDate: '2001-05-09' },
+              { episode: 22, title: 'Confusão na escola (School Daze)', airDate: '2001-05-16' },
+              { episode: 23, title: 'Juiz do terror (Judge Dread)', airDate: '2001-05-23' },
+              { episode: 24, title: 'Voto profundo (Deep Vote)', airDate: '2001-05-23' }
+          ],
+          12: [
+                { episode: 1, title: 'Quem soltou os cachorros? (Who Let the Dogs Out?)', airDate: '2001-09-26' },
+                { episode: 2, title: 'Forças armadas (Armed Forces)', airDate: '2001-10-03' },
+                { episode: 3, title: 'Por amor ou dinheiro (For Love or Money)', airDate: '2001-10-10' },
+                { episode: 4, title: 'Soldado da fortuna (Soldier of Fortune)', airDate: '2001-10-24' },
+                { episode: 5, title: 'Posse (Possession)', airDate: '2001-10-31' },
+                { episode: 6, title: 'Antigamente famoso (Formerly Famous)', airDate: '2001-11-07' },
+                { episode: 7, title: 'O mito das impressões digitais (Myth of Fingerprints)', airDate: '2001-11-14' },
+                { episode: 8, title: 'O fogo desta vez (The Fire This Time)', airDate: '2001-11-21' },
+                { episode: 9, title: 'Noite de três cães (3 Dawg Night)', airDate: '2001-11-28' },
+                { episode: 10, title: 'Preconceito (Prejudice)', airDate: '2001-12-12' },
+                { episode: 11, title: 'A coleira (The Collar)', airDate: '2002-01-09' },
+                { episode: 12, title: 'Sem cobertura (Undercovered)', airDate: '2002-01-16' },
+                { episode: 13, title: 'DR 1-102 (DR 1-102)', airDate: '2002-01-30' },
+                { episode: 14, title: 'Desaparecida (Missing)', airDate: '2002-02-06' },
+                { episode: 15, title: 'Nação do acesso (Access Nation)', airDate: '2002-02-27' },
+                { episode: 16, title: 'Renascido (Born Again)', airDate: '2002-03-06' },
+                { episode: 17, title: 'A garota mais provável (Girl Most Likely)', airDate: '2002-03-27' },
+                { episode: 18, title: 'Direitos iguais (Equal Rights)', airDate: '2002-04-03' },
+                { episode: 19, title: 'Abate (Slaughter)', airDate: '2002-04-10' },
+                { episode: 20, title: 'Deslumbrado (Dazzled)', airDate: '2002-04-24' },
+                { episode: 21, title: 'Jogo sujo (Foul Play)', airDate: '2002-05-01' },
+                { episode: 22, title: 'Relação advogado-cliente (Attorney Client)', airDate: '2002-05-08' },
+                { episode: 23, title: 'Oximoro (Oxymoron)', airDate: '2002-05-15' },
+                { episode: 24, title: 'Patriota (Patriot)', airDate: '2002-05-22' }
 ],
 13: [
   { episode: 1, title: 'Jihad americana (American Jihad)', airDate: '2002-10-02' },
@@ -1380,16 +1400,17 @@
   { episode: 19, title: 'Acidentalmente como um mártir (Accidentally Like a Martyr)', airDate: '2026-04-30' },
   { episode: 20, title: 'Uma vez queimado (Once Burned)', airDate: '2026-05-07' },
   { episode: 21, title: 'Liberdade (Liberty)', airDate: '2026-05-14' }
-]
+],
+26: []  // temporada em andamento
         }
       },
       svu: {
         id: 'svu',
         titleOriginal: 'Law & Order: Special Victims Unit', 
-	title: 'Lei & Ordem: Unidades de Vítimas Especiais',
+	      title: 'Lei & Ordem: Unidades de Vítimas Especiais',
         shortTitle: 'SVU',
         years: '1999–Presente',
-        seasons: 27,
+        seasons: 28,
         image: 'https://image.tmdb.org/t/p/original/Nou3ZShXaLuK1dDCATV1wJI4h0.jpg',
         description: 'Unidade de Vítimas Especiais investiga crimes sexuais e abusos contra crianças, mulheres e homens em Nova York.',
         seasonsData: {
@@ -2040,7 +2061,8 @@
             { episode: 19, title: 'Impropriedade (Impropriety)', airDate: '2026-04-30' },
             { episode: 20, title: 'Velhos Amigos (Old Friends)', airDate: '2026-05-07' },
             { episode: 21, title: 'Monstro (Monster)', airDate: '2026-05-14' }
-          ]
+          ],
+          28: []  // temporada em andamento
         }
       },
       ci: {
@@ -2300,7 +2322,7 @@
       la: {
         id: 'la',
         titleOriginal: 'Law & Order: Los Angeles-LA',
-	title: 'Lei & Ordem: Los Angeles',
+	      title: 'Lei & Ordem: Los Angeles',
         shortTitle: 'LA',
         years: '2010–2011',
         seasons: 1,
@@ -2336,7 +2358,7 @@
        tc: {
         id: 'tc',
         titleOriginal: 'Law & Order: True Crime', 
-	title: 'Lei & Ordem: Crimes Reais',
+	      title: 'Lei & Ordem: Crimes Reais',
         shortTitle: 'TC',
         years: '2017',
         seasons: 1,
@@ -2358,7 +2380,7 @@
 	oc: {
          id: 'oc',
          titleOriginal: 'Law & Order: Organized Crime',
-	 title: 'Lei & Ordem: Crime Organizado',
+	       title: 'Lei & Ordem: Crime Organizado',
          shortTitle: 'OC',
          years: '2021–2024',
          seasons: 5,
@@ -2402,7 +2424,7 @@
           3: [
             { episode: 1, title: 'Dê-me Abrigo (Parte 1) (Gimme Shelter (1))', airDate: '2022-09-22', crossover: { type: 'start', from: 'svu', label: 'Início do crossover Gimme Shelter (continua em SVU e Law & Order)' } },
             { episode: 2, title: 'Todo Mundo Sabe que os Dados Estão Viciados (Everybody Knows the Dice Are Loaded)', airDate: '2022-09-29' },
-    	    { episode: 3, title: 'Pegue-me se Puder (Catch Me If You Can)', airDate: '2022-10-06' },
+    	      { episode: 3, title: 'Pegue-me se Puder (Catch Me If You Can)', airDate: '2022-10-06' },
             { episode: 4, title: 'Espírito no Céu (Spirit in the Sky)', airDate: '2022-10-13' },
             { episode: 5, title: 'Por Trás de Olhos Azuis (Behind Blue Eyes)', airDate: '2022-10-27' },
             { episode: 6, title: 'Glória em Chamas (Blaze of Glory)', airDate: '2022-11-03' },
@@ -3265,20 +3287,43 @@ function getPlaceholderSVG(seriesTitle, season) {
 
       seasonNumbers.forEach(season => {
         const episodes = series.seasonsData[season];
-        const filteredEpisodes = filterEpisodes(seriesId, season, episodes);
-        if (filteredEpisodes.length === 0 && currentSearch) return;
-
         const seasonKey = `${seriesId}-season-${season}`;
         const isCollapsed = collapsedSeasons[seasonKey];
-        const seasonWatched = episodes.filter(ep => isEpisodeWatched(generateEpisodeKey(seriesId, season, ep.episode))).length;
-        const seasonProgress = episodes.length > 0 ? Math.round((seasonWatched / episodes.length) * 100) : 0;
+        
+        // Verifica se a temporada está vazia (em andamento)
+        if (episodes.length === 0) {
+          html += `
+            <div class="season fade-in">
+              <div class="season-header" onclick="toggleSeason('${seasonKey}')">
+                <div class="season-title">📁 Temporada ${season}</div>
+                <div class="season-progress">
+                  <span class="progress-stats">em andamento</span>
+                  <span class="season-toggle">▼</span>
+                </div>
+              </div>
+              <div class="episodes">
+                <div class="ongoing-season">
+                  <p>📺 Temporada em andamento</p>
+                  <span>Episódios serão adicionados conforme forem exibidos.</span>
+                </div>
+              </div>
+            </div>
+          `;
+          return;
+        }
 
+  const filteredEpisodes = filterEpisodes(seriesId, season, episodes);
+  if (filteredEpisodes.length === 0 && currentSearch) return;
+                 
+  const seasonWatched = episodes.filter(ep => isEpisodeWatched(generateEpisodeKey(seriesId, season, ep.episode))).length;
+  const seasonProgress = episodes.length > 0 ? Math.round((seasonWatched / episodes.length) * 100) : 0;
+  
         html += `
           <div class="season ${isCollapsed ? 'collapsed' : ''} fade-in">
             <div class="season-header" onclick="toggleSeason('${seasonKey}')">
               <div class="season-title">📁 Temporada ${season}</div>
               <div class="season-progress">
-                <span class="progress-stats">${seasonWatched}/${episodes.length}</span>
+                <span class="progress-stats">${seasonWatched}/${episodes.length} episódios (${seasonProgress}%)</span>
                 <div class="season-progress-bar">
                   <div class="season-progress-fill" style="width: ${seasonProgress}%"></div>
                 </div>
