@@ -512,6 +512,38 @@
         justify-content: center;
       }
 
+     .season-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 15px 20px;
+      }
+
+      .season-title {
+        font-size: 1.05rem;
+      }
+
+      .season-progress {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .progress-stats {
+        font-size: 0.9rem;
+        color: var (--text-secondary);
+      }
+
+      .season-progress-bar {
+        width: 100%;
+        order: 3;
+        margin-top: 4px;
+      }
+
+      .season-toggle {
+        order: 2;
+      }
+ 
       .episode { 
         grid-template-columns: 45px 1fr;
         gap: 10px;
@@ -3323,7 +3355,10 @@ function getPlaceholderSVG(seriesTitle, season) {
           html += `
             <div class="season fade-in">
               <div class="season-header" onclick="toggleSeason('${seasonKey}')">
-                <div class="season-title">📁 Temporada ${season}</div>
+                <div class="season-title">
+                  <span>📁</span>
+                  <span>Temporada ${season}</span>
+                </div>
                 <div class="season-progress">
                   <span class="progress-stats">em andamento</span>
                   <span class="season-toggle">▼</span>
