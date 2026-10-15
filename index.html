@@ -702,27 +702,47 @@
       }
     
       /* ===== CENTRALIZAR TÍTULO COM ÍCONE ===== */
-      .watch-order-section h2,
-      .ordem-exibicao h2,
-      .cronologica h2,
-      #watchOrder h2,
-      #ordem-cronologica h2,
-      section h2 {
-        display: block !important;
+      /* Pega só o PRIMEIRO h2 da seção (o título), sem afetar o "Progresso Geral" */
+      .watch-order-section h2:first-of-type,
+      .ordem-exibicao h2:first-of-type,
+      .cronologica h2:first-of-type,
+      #watchOrder h2:first-of-type,
+      #ordem-cronologica h2:first-of-type,
+      section[data-section="watch-order"] h2:first-of-type {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
         text-align: center !important;
         width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
         padding-left: 10px !important;
         padding-right: 10px !important;
+        gap: 6px !important;
       }
 
-      /* Ícone que fica do lado/esquerda do título */
-      h2 .icon, h2 i, h2 svg, h2 img, h2::before {
+      /* Ícone (seja ::before ou elemento inline) */
+      .watch-order-section h2:first-of-type::before,
+      .ordem-exibicao h2:first-of-type::before,
+      .cronologica h2:first-of-type::before,
+      .watch-order-section h2:first-of-type .icon,
+      .watch-order-section h2:first-of-type i,
+      .watch-order-section h2:first-of-type svg {
         display: inline-block !important;
+        margin: 0 !important;
         vertical-align: middle !important;
-        margin: 0 4px !important;
         float: none !important;
+      }
+
+      /* Se o título tiver <br> ou <span> para a segunda linha (CRONOLÓGICA) */
+      .watch-order-section h2:first-of-type span,
+      .watch-order-section h2:first-of-type small,
+      .watch-order-section h2:first-of-type strong,
+      .ordem-exibicao h2:first-of-type span,
+      .cronologica h2:first-of-type span {
+        display: inline-block;
+        text-align: center;
+        width: 100%;
       }
 
       /* ===== CENTRALIZAR O PARÁGRAFO DESCRITIVO ===== */
@@ -732,7 +752,7 @@
       #watchOrder p,
       #ordem-cronologica p,
       section p,
-      h2 + p{
+      h2 + p {
         display: block !important;
         text-align: center !important;
         width: 100% !important;
