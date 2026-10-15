@@ -700,8 +700,67 @@
         margin-left: auto;
         margin-right: auto;
       }
+    
+      /* 1º - Centraliza o container da aba ativa */
+      .tab-content.active,
+      .watch-order-tab,
+      .content-panel.active,
+      main > section.active,
+      #watchOrder,
+      #ordem-cronologica {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        padding: 20px 16px !important;
+      }
+
+      /* 2º - Centraliza a seção/card em si */
+      .watch-order-section,
+      .ordem-exibicao,
+      .cronologica,
+      .intro-card,
+      .guide-intro {
+        width: 100%;
+        max-width: 600px;      /* limita a largura para não ficar esticado */
+        margin: 0 auto;        /* centraliza o bloco */
+        text-align: center;
+        align-items: center;
+      }
+
+      /* 3º - Garante que título, parágrafo e progresso fiquem centralizados */
+      .watch-order-section > *,
+      .ordem-exibicao > *,
+      .cronologica > * {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* 4º - Centraliza os botões */
+      .watch-order-section .button-group,
+      .ordem-exibicao .button-group,
+      .watch-order-actions,
+      .progress-actions {
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      /* 5º - Se houver um card de progresso, centraliza também */
+      .progress-card,
+      .stats-card,
+      .global-progress {
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+      }
     }
-        
+
+    
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
