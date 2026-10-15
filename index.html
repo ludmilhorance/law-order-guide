@@ -701,65 +701,64 @@
         margin-right: auto;
       }
     
-      /* 1º - Centraliza o container da aba ativa */
-      .tab-content.active,
-      .watch-order-tab,
-      .content-panel.active,
-      main > section.active,
-      #watchOrder,
-      #ordem-cronologica {
+      /* ===== CENTRALIZAR TÍTULO COM ÍCONE ===== */
+      .watch-order-section h2,
+      .ordem-exibicao h2,
+      .cronologica h2,
+      #watchOrder h2,
+      #ordem-cronologica h2 {
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
         align-items: center !important;
-        justify-content: flex-start !important;
+        text-align: center !important;
         width: 100% !important;
-        padding: 20px 16px !important;
+        gap: 8px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
 
-      /* 2º - Centraliza a seção/card em si */
-      .watch-order-section,
-      .ordem-exibicao,
-      .cronologica,
-      .intro-card,
-      .guide-intro {
-        width: 100%;
-        max-width: 600px;      /* limita a largura para não ficar esticado */
-        margin: 0 auto;        /* centraliza o bloco */
+      /* Se o ícone for um ::before ou elemento separado */
+      .watch-order-section h2::before,
+      .ordem-exibicao h2::before,
+      .cronologica h2::before,
+      .watch-order-section h2 .icon,
+      .watch-order-section h2 i,
+      .watch-order-section h2 svg,
+      .watch-order-section h2 span:first-child {
+        margin: 0 !important;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      /* Se CRONOLÓGICA estiver numa tag separada ou <br> */
+      .watch-order-section h2 span,
+      .watch-order-section h2 small,
+      .watch-order-section h2 strong,
+      .ordem-exibicao h2 span,
+      .cronologica h2 span {
+        display: inline-block;
         text-align: center;
-        align-items: center;
+        width: auto;
       }
 
-      /* 3º - Garante que título, parágrafo e progresso fiquem centralizados */
-      .watch-order-section > *,
-      .ordem-exibicao > *,
-      .cronologica > * {
-        width: 100%;
-        text-align: center;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      /* 4º - Centraliza os botões */
-      .watch-order-section .button-group,
-      .ordem-exibicao .button-group,
-      .watch-order-actions,
-      .progress-actions {
-        justify-content: center;
-        margin: 0 auto;
-      }
-
-      /* 5º - Se houver um card de progresso, centraliza também */
-      .progress-card,
-      .stats-card,
-      .global-progress {
-        margin: 0 auto;
-        text-align: center;
-        width: 100%;
-        max-width: 400px;
+      /* ===== CENTRALIZAR O PARÁGRAFO DESCRITIVO ===== */
+      .watch-order-section p,
+      .ordem-exibicao p,
+      .cronologica p,
+      .watch-order-intro,
+      .guide-description,
+      .section-description,
+      .watch-order-section > div > p {
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 600px;
+        margin-left: auto !important;
+        margin-right: auto !important;
       }
     }
-
     
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
