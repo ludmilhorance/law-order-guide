@@ -514,28 +514,34 @@
 
      .season-header {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-        padding: 15px 20px;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 18px 20px;
       }
 
       .season-title {
-        font-size: 1.05rem;
+        justify-content: center;
+        font-size: 1.1rem;
       }
 
       .season-progress {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
         width: 100%;
-        justify-content: space-between;
-        gap: 10px;
-      }
+    }
 
       .progress-stats {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         color: var (--text-secondary);
+        white-space: nowrap;
       }
 
       .season-progress-bar {
         width: 100%;
+        max-width: 260px;
+        height: 6px;
         order: 3;
         margin-top: 4px;
       }
