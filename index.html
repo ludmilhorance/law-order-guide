@@ -3257,10 +3257,10 @@ function getPlaceholderSVG(seriesTitle, season) {
       
       let html = `
         <div class="series-header fade-in">
-          <img src="${series.poster || fallbackImage}"
+          <img src="${series.image || fallbackImage}"
                alt="${series.title}" 
                class="series-poster" 
-               onerror="this.src='${series.image || fallbackImage}'">
+               onerror="this.src='${series.poster || fallbackImage}'">
           <div class="series-info">
             <h2>${series.title}</h2>
 	          ${series.titleOriginal ? `<div class="series-title-original">(${series.titleOriginal})</div>`: ''}
