@@ -706,57 +706,41 @@
       .ordem-exibicao h2,
       .cronologica h2,
       #watchOrder h2,
-      #ordem-cronologica h2 {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        align-items: center !important;
+      #ordem-cronologica h2,
+      section h2 {
+        display: block !important;
         text-align: center !important;
         width: 100% !important;
-        gap: 8px !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
       }
 
-      /* Se o ícone for um ::before ou elemento separado */
-      .watch-order-section h2::before,
-      .ordem-exibicao h2::before,
-      .cronologica h2::before,
-      .watch-order-section h2 .icon,
-      .watch-order-section h2 i,
-      .watch-order-section h2 svg,
-      .watch-order-section h2 span:first-child {
-        margin: 0 !important;
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      /* Se CRONOLÓGICA estiver numa tag separada ou <br> */
-      .watch-order-section h2 span,
-      .watch-order-section h2 small,
-      .watch-order-section h2 strong,
-      .ordem-exibicao h2 span,
-      .cronologica h2 span {
-        display: inline-block;
-        text-align: center;
-        width: auto;
+      /* Ícone que fica do lado/esquerda do título */
+      h2 .icon, h2 i, h2 svg, h2 img, h2::before {
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin: 0 4px !important;
+        float: none !important;
       }
 
       /* ===== CENTRALIZAR O PARÁGRAFO DESCRITIVO ===== */
       .watch-order-section p,
       .ordem-exibicao p,
       .cronologica p,
-      .watch-order-intro,
-      .guide-description,
-      .section-description,
-      .watch-order-section > div > p {
-        text-align: center !important;
+      #watchOrder p,
+      #ordem-cronologica p,
+      section p,
+      h2 + p{
         display: block !important;
+        text-align: center !important;
         width: 100% !important;
-        max-width: 600px;
+        max-width: 600px !important;
         margin-left: auto !important;
         margin-right: auto !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
       }
     }
     
