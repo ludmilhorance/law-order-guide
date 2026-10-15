@@ -3337,7 +3337,22 @@ function getPlaceholderSVG(seriesTitle, season) {
         `;
       });
 
-      return html;
+      document.getElementById('content').innerHTML = html;
+
+      // Carrega os posters reais das temporadas
+      const seriesTitle = series.title;
+      Object.keys(series.seasonsData).map(Number).sort((a, b) => a - b).forEach(season => {
+        const episodes = series.seasonsData[season] || [];
+        episodes.forEach(async ep => {
+          const key = generateEpisodeKey(seriesId, season, ep.episode);
+          const posterId = `poster-${key.replace(/[^a-zA-Z0-9]/g, '-')}`;
+          const url = await fetchSeasonPoster(seriesTitle, season);
+          if (url) {
+            const img = document.getElementById(posterId);
+            if (img) img.src = url;
+          }
+        });
+      });
     }
 
     function renderCrossoverBadge(crossover) {
@@ -3351,19 +3366,25 @@ function getPlaceholderSVG(seriesTitle, season) {
     }
     
     function renderEpisode(seriesId, season, ep) {
-      console.log('renderEpisode:', seriesId, season, ep.episode, 'crossover:', ep.crossover);
       const key = generateEpisodeKey(seriesId, season, ep.episode);
       const watched = isEpisodeWatched(key);
 
+      const series = seriesData[seriesId] || internationalData[seriesId];
+      const seriesTitle = series ? series.title : '';
+      const placeholder = getPlaceholderSVG(seriesTitle, season);
+      const posterId = `poster-${key.replace(/[^a-zA-Z0-9]/g, '-')}`;
+
       return `
-        <div class="episode ${watched ? 'watched' : ''}">
-          <div class="episode-number">${ep.episode}</div>
+        <div class="episode ${watched ? 'watched' : ''}" data-key="${key}">
+          <div class="episode-poster">
+            <img id="${posterId}" src="${placeholder}" alt="${ep.title}" loading="lazy">
+          </div>
           <div class="episode-info">
             <div class="episode-title">${ep.title}${ep.crossover ? ' [TEM CROSSOVER]' : ''}</div>
-	    <div class="episode-meta">📅 ${formatDate(ep.airDate)} • Temporada ${season}, Episódio ${ep.episode}</div>
-	    ${renderCrossoverBadge(ep.crossover)}
-	    </div> 
-            <div class="episode-actions">
+	          <div class="episode-meta">Temporada ${season}, Episódio ${ep.episode} • ${formatDate(ep.airDate)}</div>
+	          ${renderCrossoverBadge(ep.crossover)}
+	        </div> 
+          <div class="episode-actions">
             <button class="watch-btn ${watched ? 'watched' : ''}" onclick="toggleEpisodeWatched('${key}')" title="${watched ? 'Desmarcar' : 'Marcar como assistido'}">
               ${watched ? '✓' : '○'}
             </button>
