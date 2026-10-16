@@ -701,52 +701,13 @@
         margin-right: auto;
       }
     
-      /* ===== CENTRALIZAR TÍTULO COM ÍCONE ===== */
-      /* Qualquer h2 dentro dessas seções */
-      .watch-order-section h2,
-      .ordem-exibicao h2,
-      .cronologica h2,
-      #watchOrder h2,
-      #ordem-cronologica h2,
-      section[data-section="watch-order"] h2,
-      .tab-content.activer h2 {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
+      /* ===== CENTRALIZAR TÍTULO COM ÍCONE — SÓ NO CELULAR ===== */
+      .watch-order-header h2 {
         text-align: center !important;
         width: 100% !important;
+        display: block !important;
         margin-left: auto !important;
         margin-right: auto !important;
-      }
-
-      /* Ícone (seja ::before ou elemento inline) */
-      h2::before,
-      h2 span,
-      h2 .icon,
-      h2 i,
-      h2 svg,
-      h2 img {
-        display: inline-block !important;
-        margin: 0 4px !important;
-        vertical-align: middle !important;
-        text-align: center !important;
-       }
-
-       /* Garante que elementos internos do h2 não quebrem o layout */
-      h2 * {
-        text-align: center !important;
-      }
-      
-      /* Se o título tiver <br> ou <span> para a segunda linha (CRONOLÓGICA) */
-      .watch-order-section h2:first-of-type span,
-      .watch-order-section h2:first-of-type small,
-      .watch-order-section h2:first-of-type strong,
-      .ordem-exibicao h2:first-of-type span,
-      .cronologica h2:first-of-type span {
-        display: inline-block;
-        text-align: center;
-        width: 100%;
       }
 
       /* ===== CENTRALIZAR O PARÁGRAFO DESCRITIVO ===== */
