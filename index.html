@@ -727,6 +727,38 @@
         padding-left: 10px !important;
         padding-right: 10px !important;
       }
+    
+      /* ===== CENTRALIZAR PROGRESSO GERAL E BOTÕES — SÓ NO CELULAR ===== */
+      .progress-section {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+      }
+
+      .progress-section h3 {
+        text-align: center !important;
+        width: 100% !important;
+      }
+
+      .progress-section .progress-stats {
+        text-align: center !important;
+        width: 100% !important;
+      }
+
+      .progress-section .button-group {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        width: 100% !important;
+      }
+
+      .progress-section button {
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
     }
     
     @keyframes fadeIn {
@@ -3670,7 +3702,7 @@ function getPlaceholderSVG(seriesTitle, season) {
 
   let html = `
     <div class="watch-order-header fade-in">
-      <h2>📋 Ordem de Exibição Cronológica</h2>
+      <h2>Ordem de Exibição Cronológica</h2>
       <p>Veja todos os episódios do universo Law & Order em ordem de lançamento. Clique em qualquer episódio para marcar como assistido.</p>
       <div class="progress-section" style="margin-top: 15px;">
         <div class="progress-header">
