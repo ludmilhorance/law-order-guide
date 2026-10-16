@@ -701,7 +701,7 @@
         margin-right: auto;
       }
     
-      /* ===== CENTRALIZAR TÍTULO COM ÍCONE — SÓ NO CELULAR ===== */
+      /* ===== CENTRALIZAR TÍTULO — SÓ NO CELULAR ===== */
       .watch-order-header h2 {
         text-align: center !important;
         width: 100% !important;
@@ -728,31 +728,50 @@
         padding-right: 10px !important;
       }
     
-      /* ===== CENTRALIZAR PROGRESSO GERAL E BOTÕES — SÓ NO CELULAR ===== */
+      /* ===== CENTRALIZAR PROGRESSO GERAL, BARRA E BOTÕES — SÓ NO CELULAR ===== */
       .progress-section {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         text-align: center !important;
         width: 100% !important;
+        gap: 10px !important; 
       }
-
+      
+      /* Título "Progresso Geral" */
       .progress-section h3 {
         text-align: center !important;
         width: 100% !important;
+        margin-bottom: 0 !important;
+        order: 1 !important;
       }
 
+      /* Barra de progresso — força a aparecer no meio */
+      .progress-section .progress-bar,
+      .progress-section progress,
+      .progress-section [class*="progress"]:not(.progress-stats):not(.button-group) {
+        display: block !important;
+        width: 100% !important;
+        max-width: 260px !important;
+        height: 8px !important;
+        margin: 0 auto !important;
+        order: 2 !important;
+      }
+
+      /* Texto "0/1710 episódios" — vai para depois da barra */
       .progress-section .progress-stats {
         text-align: center !important;
         width: 100% !important;
       }
 
+      /* Botões — ficam por último */
       .progress-section .button-group {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         gap: 10px !important;
         width: 100% !important;
+        order: 4 !important;
       }
 
       .progress-section button {
