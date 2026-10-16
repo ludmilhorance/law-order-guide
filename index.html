@@ -738,30 +738,32 @@
         gap: 10px !important; 
       }
       
-      /* Título "Progresso Geral" */
-      .progress-section h3 {
+      /* Título "Progresso Geral" e contador*/
+      .progress-section h3,
+      .progress-section .progress-stats {
         text-align: center !important;
         width: 100% !important;
-        margin-bottom: 0 !important;
-        order: 1 !important;
+        margin: 0 !important;
       }
 
       /* Barra de progresso — força a aparecer no meio */
       .progress-section .progress-bar,
-      .progress-section progress,
-      .progress-section [class*="progress"]:not(.progress-stats):not(.button-group) {
         display: block !important;
         width: 100% !important;
         max-width: 260px !important;
         height: 8px !important;
-        margin: 0 auto !important;
-        order: 2 !important;
+        margin: 6px auto !important;
+        background: var(--surface-lighter) !important;
+        border-radius: 4px !important;
+        overflow: hidden !important;  
       }
 
       /* Texto "0/1710 episódios" — vai para depois da barra */
-      .progress-section .progress-stats {
-        text-align: center !important;
-        width: 100% !important;
+      .progress-section .progress-bar .progress-fill,
+      .progress-section .progress-bar > div {
+        display: block !important;
+        height: 100% !important;
+        background: var(--accent) !important;
       }
 
       /* Botões — ficam por último */
@@ -771,7 +773,7 @@
         align-items: center !important;
         gap: 10px !important;
         width: 100% !important;
-        order: 4 !important;
+        margin-top: 6px !important;
       }
 
       .progress-section button {
