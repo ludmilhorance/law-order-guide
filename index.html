@@ -728,7 +728,7 @@
         padding-right: 10px !important;
       }
     
-      /* ===== CENTRALIZAR PROGRESSO GERAL, BARRA E BOTÕES — SÓ NO CELULAR ===== */
+      /* ===== PROGRESSO GERAL, BARRA E BOTÕES — SÓ NO CELULAR ===== */
       .progress-section {
         display: flex !important;
         flex-direction: column !important;
@@ -739,46 +739,58 @@
       }
       
       /* Título "Progresso Geral" e contador*/
-      .progress-section h3,
-      .progress-section .progress-stats {
-        text-align: center !important;
+      .progress-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 2px !important;
         width: 100% !important;
+        margin-bottom: 0 !important;
+      }
+
+      .progress-header h3 {
+        text-align: center !important;
         margin: 0 !important;
       }
 
-      /* Barra de progresso — força a aparecer no meio */
-      .progress-section .progress-bar,
+      .progress-header span,
+      .progress-header .progress-stats {
+        text-align: center !important;
+        font-size: 0.95rem !important;
+        color: var(--text-secondary) !important;
+      }
+
+      /* Barra de progresso */
+      .progress-bar,
         display: block !important;
         width: 100% !important;
         max-width: 260px !important;
-        height: 8px !important;
-        margin: 6px auto !important;
-        background: var(--surface-lighter) !important;
-        border-radius: 4px !important;
+        height: 6px !important;
+        margin: 0 auto !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 3px !important;
         overflow: hidden !important;  
       }
 
-      /* Texto "0/1710 episódios" — vai para depois da barra */
-      .progress-section .progress-bar .progress-fill,
-      .progress-section .progress-bar > div {
+      /* Preencimento da barra */
+      .progress-bar > div,
+      .progress-bar .progress-fill {
         display: block !important;
         height: 100% !important;
         background: var(--accent) !important;
       }
 
-      /* Botões — ficam por último */
-      .progress-section .button-group {
-        display: flex !important;
+      /* Botões */
+      .progress-actions {
         flex-direction: column !important;
         align-items: center !important;
         gap: 10px !important;
         width: 100% !important;
-        margin-top: 6px !important;
+        margin-top: 4px !important;
       }
 
-      .progress-section button {
-        margin-left: auto !important;
-        margin-right: auto !important;
+      .progress-actions button {
+        margin-left: 0 auto !important;
       }
     }
     
