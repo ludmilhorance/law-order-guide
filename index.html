@@ -565,16 +565,19 @@
       }
   
       .watch-order-item {
-	      grid-template-columns: 100px 1fr;
-        gap: 12px 16px;
-        padding: 18px 20px;
+        display: grid;
+	      grid-template-columns: 90px 1fr auto;
+        grid-template-rows: auto;
+        gap: 0 14px;
+        padding: 16px;
         align-items: start;
       }
 
       .watch-order-poster {
-        width: 100px;
-        height: 150px;
-        grid-row: 1 / 4;
+        width: 90px;
+        height: 135px;
+        grid-column: 1;
+        grid-row: 1;
         border-radius: 6px;
         object-fit: cover;
         align-self: start;
@@ -582,19 +585,22 @@
 
       .watch-order-info {
         grid-column: 2;
+        grid-row: 1;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 6px;
+        gap: 5px;
         min-width: 0;
         overflow: hidden;
-        padding-top: 4px
+        padding-top: 2px;
       }
   
       .watch-order-actions {
-	      grid-column: 1 / -1;
-    	  justify-content: flex-end;
-        margin-top: 6px;
+	      grid-column: 3;
+        grid-row: 1;
+    	  justify-self: end;
+        align-self: start;
+        margin: 0;
       }
   
       .watch-order-main,
@@ -605,19 +611,20 @@
       }
 
       .watch-order-series {
-        font-size: 1rem;
-        line-height: 1.35;
+        font-size: 0.95rem;
+        line-height: 1.3;
         white-space: normal;    
       }
 
       .watch-order-meta {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         opacity: 0.85;
       }
 
       .watch-order-original {
         font-size: 0.85rem;
-        opacity: 0.75;
+        opacity: 0.7;
+        margin-top: 2px;
       }
 
       .episode-pt {
