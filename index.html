@@ -2751,7 +2751,7 @@
       conviction: {
         id: 'conviction',
         titleOriginal: 'Conviction',
-	title: 'Convicção',
+	      title: 'Convicção',
         shortTitle: 'Conviction',
         years: '2006',
         seasons: 1,
@@ -2961,7 +2961,7 @@
       paris: {
         id: 'paris',
         titleOriginal: 'Paris Enquêtes Criminelles (Paris Criminal Investigation',
-	title: 'Paris contra o Crime',
+	      title: 'Paris contra o Crime',
         shortTitle: 'Paris',
         years: '2007–2008',
         seasons: 3,
@@ -2999,7 +2999,7 @@
       uk: {
         id: 'uk',
         titleOriginal: 'Law & Order: United Kingdom-UK',
-	title: 'Lei & Ordem: Reino Unido',
+	      title: 'Lei & Ordem: Reino Unido',
         shortTitle: 'UK',
         years: '2009–2014',
         seasons: 8,
@@ -3219,6 +3219,41 @@
   
   'conviction': 'Conviction',
   'convicção': 'Conviction',
+
+  'law order ci russia': 'Law & Order: Criminal Intent (Russia)',
+  'law & order ci russia': 'Law & Order: Criminal Intent (Russia)',
+  'criminal intent russia': 'Law & Order: Criminal Intent (Russia)',
+  'ci russia': 'Law & Order: Criminal Intent (Russia)',
+  'lei e ordem ci russia': 'Law & Order: Criminal Intent (Russia)',
+  'lei & ordem ci russia': 'Law & Order: Criminal Intent (Russia)',
+  'lei e ordem crimes premeditados russia': 'Law & Order: Criminal Intent (Russia)',
+  'lei & ordem crimes premeditados russia': 'Law & Order: Criminal Intent (Russia)',
+  'russia ci': 'Law & Order: Criminal Intent (Russia)',
+  'law & order crimes premeditados russia': 'Law & Order: Criminal Intent (Russia)',
+  'law and order crimes premeditados russia': 'Law & Order: Criminal Intent (Russia)',
+  'law and order criminal intent russia': 'Law & Order: Criminal Intent (Russia)',
+  'law order crimes premeditados russia': 'Law & Order: Criminal Intent (Russia)',
+  'Zakon i poryadok: Prestupnyy umysel': 'Law & Order: Criminal Intent (Russia)',
+
+  'law order svu russia': 'Law & Order: SVU (Russia)',
+  'law & order svu russia': 'Law & Order: SVU (Russia)',
+  'svu russia': 'Law & Order: SVU (Russia)',
+  'lei e ordem svu russia': 'Law & Order: SVU (Russia)',
+  'lei & ordem svu russia': 'Law & Order: SVU (Russia)',
+  'lei e ordem uve russia': 'Law & Order: SVU (Russia)',
+  'lei & ordem uve russia': 'Law & Order: SVU (Russia)',
+  'russia svu': 'Law & Order: SVU (Russia)',
+  'Zakon i Poryadok: Otdel operativnykh rassledovaniy)': 'Law & Order: SVU (Russia)', 
+
+  'law order paris': 'Law & Order: Paris',
+  'law & order paris': 'Law & Order: Paris',
+  'lei e ordem paris': 'Law & Order: Paris',
+  'lei & ordem paris': 'Law & Order: Paris',
+  'paris': 'Law & Order: Paris',
+  'Paris Enquêtes Criminelles (Paris Criminal Investigation)': 'Law & Order: Paris',
+  'paris enquêtes criminelles': 'Law & Order: Paris',
+  'paris criminal investigation': 'Law & Order: Paris',
+  'paris contra o crime': 'Law & Order: Paris',
   
   'lei e ordem toronto': 'Law & Order Toronto: Criminal Intent',
   'lei & ordem toronto': 'Law & Order Toronto: Criminal Intent',
@@ -3345,6 +3380,21 @@ const SEASON_POSTERS = {
     1: TMDB_BASE_URL + '/omdsNNEo5F1BgywPqHBmc0Tfmhb.jpg',
     2: TMDB_BASE_URL + '/n2NxrkG3KpZ6FwALqi5uiZF8zXC.jpg',
     3: TMDB_BASE_URL + '/eqD7W5EGue5Nvg0BNEnoRyMQAcz.jpg'
+  },
+  'Law & Order: Criminal Intent (Russia)': {
+    1: 'https://artworks.thetvdb.com/banners/posters/229481-1.jpg',
+    2: 'https://artworks.thetvdb.com/banners/posters/229481-1.jpg',
+    3: 'https://artworks.thetvdb.com/banners/posters/229481-1.jpg'
+  },
+  'Law & Order: SVU (Russia)': {
+    1: 'https://artworks.thetvdb.com/banners/posters/229311-1.jpg',
+    2: 'https://artworks.thetvdb.com/banners/posters/229311-1.jpg',
+    3: 'https://artworks.thetvdb.com/banners/posters/229311-1.jpg'
+  },
+  'Law & Order: Paris': {
+    1: 'https://artworks.thetvdb.com/banners/seasons/230021-1.jpg',
+    2: 'https://artworks.thetvdb.com/banners/seasons/230021-2.jpg',
+    3: 'https://artworks.thetvdb.com/banners/seasons/230021-3-2.jpg'
   }
 };
 
@@ -3620,7 +3670,7 @@ function getPlaceholderSVG(seriesTitle, season) {
 
       // Carrega os posters reais das temporadas depois que o HTML já estiver na tela
       setTimeout(() => {
-        const seriesTitle = series.title;
+        const seriesTitle = series.titleOriginal || series.title;
         Object.keys(series.seasonsData).map(Number).sort((a, b) => a - b).forEach(season => {
           const episodes = series.seasonsData[season] || [];
           episodes.forEach(async ep => {
